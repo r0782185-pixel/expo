@@ -1,14 +1,6 @@
-import type { ComponentProps } from 'react';
+import { NativeTabsNavigatorWithContext } from './NativeBottomTabsNavigator';
+import type { NativeTabsProps } from './types';
 
-import {
-  NativeTabsNavigatorWithContext,
-  type NativeTabsNavigator,
-} from './NativeBottomTabsNavigator';
-import { TabTrigger } from './TabOptions';
-
-export const NativeTabs = Object.assign(
-  (props: ComponentProps<typeof NativeTabsNavigator>) => {
-    return <NativeTabsNavigatorWithContext {...props} />;
-  },
-  { Trigger: TabTrigger }
-);
+export const NativeTabs = (props: NativeTabsProps) => {
+  return <NativeTabsNavigatorWithContext {...props} />;
+};

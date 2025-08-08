@@ -1,5 +1,5 @@
 import { ThemeProvider, DarkTheme } from '@react-navigation/native';
-import { Badge, Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
+import { Badge, Icon, Label, NativeTabs, NativeTabTrigger } from 'expo-router/unstable-native-tabs';
 import { useState } from 'react';
 import { Appearance, Platform } from 'react-native';
 
@@ -33,18 +33,18 @@ export default function Layout() {
             },
           }}
           minimizeBehavior="onScrollDown">
-          <NativeTabs.Trigger
+          <NativeTabTrigger
             name="index"
             options={{
               icon: { sf: 'applewatch.side.right', drawable: 'ic_phone' },
               title: 'My Watch',
             }}
           />
-          <NativeTabs.Trigger name="faces" options={{ title: 'Face Gallery' }}>
+          <NativeTabTrigger name="faces" options={{ title: 'Face Gallery' }}>
             <Icon sf="lock.applewatch" selectedSf="lock.open.applewatch" drawable="ic_lock_open" />
             <Label hidden />
-          </NativeTabs.Trigger>
-          <NativeTabs.Trigger name="four">
+          </NativeTabTrigger>
+          <NativeTabTrigger name="four">
             <Icon
               src={require('../../../assets/explore_gray.png')}
               selectedSrc={require('../../../assets/explore_orange.png')}
@@ -53,12 +53,12 @@ export default function Layout() {
             />
             <Badge>9+</Badge>
             <Label>Discover</Label>
-          </NativeTabs.Trigger>
+          </NativeTabTrigger>
           {activeTabs.map((tab) => (
-            <NativeTabs.Trigger key={tab} name={tab}>
+            <NativeTabTrigger key={tab} name={tab}>
               <Icon sf="plus" drawable="ic_search" />
               <Badge />
-            </NativeTabs.Trigger>
+            </NativeTabTrigger>
           ))}
         </NativeTabs>
       </ActiveTabsContext.Provider>

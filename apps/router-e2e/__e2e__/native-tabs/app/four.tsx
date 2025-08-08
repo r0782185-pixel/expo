@@ -1,4 +1,4 @@
-import { Badge, Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
+import { Badge, Icon, Label, NativeTabTrigger } from 'expo-router/unstable-native-tabs';
 import { useState } from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
 import type { SFSymbol } from 'sf-symbols-typescript';
@@ -24,11 +24,11 @@ export default function Two() {
         backgroundColor: '#aff',
         gap: 16,
       }}>
-      <NativeTabs.Trigger>
+      <NativeTabTrigger>
         <Label>{labelValue}</Label>
         <Badge>{badgeValue}</Badge>
         <Icon sf={iconName as SFSymbol} drawable={iconName} />
-      </NativeTabs.Trigger>
+      </NativeTabTrigger>
       <Text style={{ fontSize: 24, fontWeight: 600 }}>Label</Text>
       <TextInput
         testID="label-input"

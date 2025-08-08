@@ -1,7 +1,3 @@
-import type { ComponentProps } from 'react';
-import { type NativeTabsNavigator } from './NativeBottomTabsNavigator';
-import { TabTrigger } from './TabOptions';
-export declare const NativeTabs: ((props: ComponentProps<typeof NativeTabsNavigator>) => import("react").JSX.Element) & {
-    Trigger: typeof TabTrigger;
-};
+import type { NativeTabsProps } from './types';
+export declare const NativeTabs: (props: NativeTabsProps) => import("react").JSX.Element;
 //# sourceMappingURL=NativeTabs.d.ts.map
